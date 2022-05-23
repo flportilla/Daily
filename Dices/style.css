@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: #F5F5DC;
+}
+
+#main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    margin-left: 70px;
+    margin-right: 70px;
+    color: #1d113b;
+}
+
+#title>h1 {
+    padding: 50px 0 50px;
+    margin: 0 auto;
+    font-size: 50px;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2),
+        1px 1px 0 rgba(255, 255, 255, 0.5);
+    font-family: 'Arial Black';
+}
+
+#dices_container {
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 252px;
+    position: relative;
+
+}
+
+#dices_container .dice_face {
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 50px;
+}
+
+#dices_container .dice_face .dice_number_1 {
+	position: absolute;
+    top: 3px;
+	left: 3px;
+}
+
+#dices_container .dice_face .dice_number_2 {
+    position: absolute;
+	top: 50px;
+	left: 3px;
+}
+
+#dices_container .dice_face .dice_number_3 {
+    position: absolute;
+	top: 97px;
+	left: 3px;
+}
+
+#dices_container .dice_face .dice_number_4 {
+    position: absolute;
+	top: 50px;
+	left: 50px;
+}
+
+#dices_container .dice_face .dice_number_5 {
+    position: absolute;
+	top: 3px;
+	right: 3px;
+}
+
+#dices_container .dice_face .dice_number_6 {
+    position: absolute;
+	right: 3px;
+	top: 50px;
+}
+
+#dices_container .dice_face .dice_number_7{
+    position: absolute;
+	right: 3px;
+	top: 97px;
+}
+
+
+#dices_container .dice_face > div {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin: 9px;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7) inset,
+        1px 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fff;
+    background: -webkit-radial-gradient(circle, #fff, #c1bec9);
+}
+
+#button_container button{
+    cursor: pointer;
+}
+
+.shake {
+    -webkit-animation: shake 1s;
+    -moz-animation: shake 1s;
+    -ms-animation: shake 1s;
+    animation: shake 1s;
+}
+
+@-webkit-keyframes shake {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        -webkit-transform: translateX(5px);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        -webkit-transform: translateX(-5px);
+    }
+}
+
+@-moz-keyframes shake {
+
+    0%,
+    100% {
+        -moz-transform: translateX(0);
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        -moz-transform: translateX(5px);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        -moz-transform: translateX(-5px);
+    }
+}
+
+@-o-keyframes shake {
+
+    0%,
+    100% {
+        -o-transform: translateX(0);
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        -o-transform: translateX(5px);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        -o-transform: translateX(-5px);
+    }
+}
+
+@-ms-keyframes shake {
+
+    0%,
+    100% {
+        -ms-transform: translateX(0);
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        -ms-transform: translateX(5px);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        -ms-transform: translateX(-5px);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        transform: translateX(5px);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        transform: translateX(-5px);
+    }
+}
