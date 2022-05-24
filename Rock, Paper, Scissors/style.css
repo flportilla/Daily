@@ -62,7 +62,7 @@
     height: 100%;
 }
 
-#result_info{
+#result_messages{
     width: 200px;
     display: flex;
     align-items: center;
