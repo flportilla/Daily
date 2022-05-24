@@ -7,13 +7,29 @@ const scissorsButton = document.querySelector('#scissors_button');
 const resultMessages = document.querySelector('#result_messages');
 let playerSelection;
 let computerResult;
+let setCountdown;
+
 
 
 //functions
 
 
+function setTimer() {
+    let contador = 2
+    resultMessages.innerHTML = (`<span>3</span>`);
+    const timer = setInterval(function () {
+        resultMessages.innerHTML = (`<span>${contador}</span>`);
+        contador--;
+        
+    }, 500);
+    setCountdown =  timer;
+}
+
 //handle shaking animation
 function handleShake() {
+
+    setTimer();
+
     computerHand.innerHTML = `<img src="./img/left_fist.png" alt="rock" id="computer_hand_img">`
     playerHand.innerHTML = `<img src="./img/right_fist.png" alt="hand" id="player_hand_img">`
     computerHand.classList.add('shake');
@@ -23,6 +39,8 @@ function handleShake() {
 function removeShake() {
     computerHand.classList.remove('shake');
     playerHand.classList.remove('shake');
+    clearInterval(setCountdown)
+    
 }
 
 
@@ -35,8 +53,9 @@ function handlePlayerChoice() {
 
 //handle the computer selection and result
 function handleResults() {
+
     const computerSelection = Math.floor(Math.random() * 3) + 1;
-  
+
     switch (computerSelection) {
 
         case 1:
@@ -44,10 +63,10 @@ function handleResults() {
             computerHand.innerHTML = `<img src="img/scissors.png" alt="scissors">`;
             computerResult = computerHand.querySelector('img').alt;
 
-            if(computerResult === playerSelection) {
+            if (computerResult === playerSelection) {
                 resultMessages.innerHTML = (`<span> It's a draw! </span>`);
             }
-            else if(playerSelection === 'rock' && computerResult === 'scissors') {
+            else if (playerSelection === 'rock' && computerResult === 'scissors') {
                 resultMessages.innerHTML = (`<span> You win! </span>`)
             }
             else if (playerSelection === 'paper' && computerResult === 'scissors') {
@@ -60,10 +79,10 @@ function handleResults() {
             computerHand.innerHTML = `<img src="img/paper.png" alt="paper">`;
             computerResult = computerHand.querySelector('img').alt;
 
-            if(computerResult === playerSelection) {
+            if (computerResult === playerSelection) {
                 resultMessages.innerHTML = (`<span> It's a draw! </span>`);
             }
-            else if(playerSelection === 'rock' && computerResult === 'paper'){
+            else if (playerSelection === 'rock' && computerResult === 'paper') {
                 resultMessages.innerHTML = (`<span> You win! </span>`)
             }
             else if (playerSelection === 'scissors' && computerResult === 'paper') {
@@ -76,10 +95,10 @@ function handleResults() {
             computerHand.innerHTML = `<img src="img/rock.png" alt="rock">`;
             computerResult = computerHand.querySelector('img').alt;
 
-            if(computerResult === playerSelection) {
+            if (computerResult === playerSelection) {
                 resultMessages.innerHTML = (`<span> It's a draw! </span>`);
             }
-            else if (playerSelection === 'paper' && computerResult === 'rock'){
+            else if (playerSelection === 'paper' && computerResult === 'rock') {
                 resultMessages.innerHTML = (`<span> You win! </span>`)
             }
             else if (playerSelection === 'scissors' && computerResult === 'rock') {
