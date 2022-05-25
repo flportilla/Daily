@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: calc(100vw - 18px);
+    background-color: #34333d;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
+#main_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header {
+    width: 100%;
+    height: 56px;
+    color: #aeadbb;
+    line-height: 56px;
+    padding: 0 20px;
+    letter-spacing: 4px;
+    text-shadow: -1px -1px 0 rgb(0 0 0 / 50%), 1px 1px 0 rgb(255 255 255 / 10%);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#header #links_container {
+    display: flex;
+    font-size: 16px;
+    gap: 22px;
+}
+
+#header>div {
+    width: fit-content;
+    font-size: 28px;
+}
+
+#calculator_ui {
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    ;
+    display: grid;
+    grid-template-columns: repeat(4, 82.5px);
+    grid-template-rows: repeat(6, 70px);
+    grid-template-areas: "display display display display"
+                        "button button button button"
+                        "button button button button"
+                        "button button button button"
+                        "button button button button"
+                        "button button button button"
+                        "button button button button";
+    justify-content: center;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#display {
+    grid-area: display;
+    width: 100%;
+    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 50px;
+    color: #2e2e36;
+    text-align: right;
+    background-color: #fbfbfb;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 30%) inset;
+}
+
+#display:focus-visible {
+    outline: none;
+}
+
+#sign{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#sign > span{
+    font-family: inherit;
+    font-size: inherit;
+    background-color: inherit;
+}
+#clear{
+    background-color: #ffa200;
+}
+#blanks{
+    background-color: #34333d;
+}
+#equals{
+    background-color :#13d7d0;
+}
+
+.buttons{
+    background-color: #fbfbfb;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 
+        1px 0px 0 rgb(0 0 0 / 5%), 
+        0px 1px 0 rgb(0 0 0 / 5%), 
+        2px 1px 0 rgb(0 0 0 / 5%), 
+        1px 2px 0 rgb(0 0 0 / 5%);
+}
