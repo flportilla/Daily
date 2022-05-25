@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./scripts.js" defer></script> 
+    <!-- defer is used to load the script after the page is loaded -->
 </head>
 <body>
     <div id="main_container"> 
@@ -19,30 +21,31 @@
             </div>
         </header>
         <div id="calculator_ui">
-            <input type="number" id="display"></input>
-            <button class="buttons"id="clear">AC</button>
-            <button class="buttons"id="erase">C</button>
-            <button class="buttons"id="sign">±</button>
-            <button class="buttons"id="/">/</button>
-            <button class="buttons"id="7">7</button>
-            <button class="buttons"id="8">8</button>
-            <button class="buttons"id="9">9</button>
-            <button class="buttons"id="*">X</button>
-            <button class="buttons"id="4">4</button>
-            <button class="buttons"id="5">5</button>
-            <button class="buttons"id="6">6</button>
-            <button class="buttons"id="-">-</button>
-            <button class="buttons"id="1">1</button>
-            <button class="buttons"id="2">2</button>
-            <button class="buttons"id="3">3</button>
-            <button class="buttons"id="+">+</button>
-            <button class="buttons"id="blank"></button>
-            <button class="buttons"id="0">0</button>
-            <button class="buttons"id=".">.</button>
-            <button class="buttons"id="equal">=</button>
+            <input id="display" type="text" maxlength="10"  min="0" max="9999">
+
+            <button class="buttons"data-allClear>AC</button>
+            <button class="buttons"data-delete>C</button>
+            <button class="buttons"data-sign>±</button>
+            <button class="buttons"data-operation>/</button>
+            <button class="buttons"data-number>7</button>
+            <button class="buttons"data-number>8</button>
+            <button class="buttons"data-number>9</button>
+            <button class="buttons"data-operation>X</button>
+            <button class="buttons"data-number>4</button>
+            <button class="buttons"data-number>5</button>
+            <button class="buttons"data-number>6</button>
+            <button class="buttons"data-operation>-</button>
+            <button class="buttons"data-number>1</button>
+            <button class="buttons"data-number>2</button>
+            <button class="buttons"data-number>3</button>
+            <button class="buttons"data-operation>+</button>
+            <button class="buttons"></button>
+            <button class="buttons"data-number>0</button>
+            <button class="buttons"data-number>.</button>
+            <button class="buttons"data-equals>=</button>
 
         </div>
     </div>
-    <script src="./scripts.js"></script>
+
 </body>
 </html>
