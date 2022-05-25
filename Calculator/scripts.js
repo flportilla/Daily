@@ -27,15 +27,22 @@ function deleteLast(){
 }
 
 function negative(){
-    display.value = display.value * -1;
+
+    const checkIfNumber = (display.value * -1) ? true : false;
+    if(checkIfNumber){
+        display.value = display.value * -1;
+    }
+
 }
 
 function showOperator(){
 
     if(display.value === '') return;
 
-    if(display.value.slice(-1) === '+' || display.value.slice(-1) === '-' || display.value.slice(-1) === '*' || display.value.slice(-1) === '/') return;
+    if(display.value.slice(-1) === '+' || display.value.slice(-1) === '-' || display.value.slice(-1) === '*' || display.value.slice(-1) === '/') {
 
+        deleteLast()
+    }
     if(this.id === '+'){
         display.value += '+';
     }
@@ -51,6 +58,11 @@ function showOperator(){
 
 }
 
+function calculate(){
+    let result = eval(display.value);
+    display.value = result;
+}
+
 //Event Listeners
 
 numberButtons.forEach(button => {
@@ -62,3 +74,4 @@ changeSign.addEventListener('click', negative);
 operationButtons.forEach(button => {
     button.addEventListener('click', showOperator);
 })
+equalsButton.addEventListener('click', calculate);
