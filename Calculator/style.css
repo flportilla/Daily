@@ -4,7 +4,7 @@
     box-sizing: border-box;
     max-width: calc(100vw - 18px);
     background-color: #34333d;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-family: Candara, "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 }
 
 #main_container {
@@ -43,22 +43,28 @@
     width: fit-content;
     height: fit-content;
     gap: 10px;
-    padding: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
     background-color: rgba(255, 255, 255, 0.4);
-    ;
     display: grid;
     grid-template-columns: repeat(4, 82.5px);
-    grid-template-rows: repeat(6, 70px);
+    grid-template-rows: 91px repeat(5, 70px);
     grid-template-areas: "display display display display"
-                        "button button button button"
-                        "button button button button"
-                        "button button button button"
-                        "button button button button"
-                        "button button button button"
-                        "button button button button";
+        "button button button button"
+        "button button button button"
+        "button button button button"
+        "button button button button"
+        "button button button button"
+        "button button button button";
     justify-content: center;
 
 }
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -68,7 +74,9 @@ input::-webkit-inner-spin-button {
 
 #display {
     grid-area: display;
-    width: 100%;
+    margin-left: -20px;
+    width: 111%;
+    height: 91px;
     font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-size: 50px;
     color: #2e2e36;
@@ -84,35 +92,40 @@ input::-webkit-inner-spin-button {
     outline: none;
 }
 
-#sign{
+#sign {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#sign > span{
+
+#sign>span {
     font-family: inherit;
     font-size: inherit;
     background-color: inherit;
 }
-#clear{
+
+#clear {
     background-color: #ffa200;
 }
-#blanks{
+
+#blank {
     background-color: #34333d;
 }
-#equals{
-    background-color :#13d7d0;
+
+#equal {
+    background-color: #13d7d0;
 }
 
-.buttons{
+.buttons {
     background-color: #fbfbfb;
     border: none;
     font-size: 20px;
     cursor: pointer;
-    box-shadow: 
-        1px 0px 0 rgb(0 0 0 / 5%), 
-        0px 1px 0 rgb(0 0 0 / 5%), 
-        2px 1px 0 rgb(0 0 0 / 5%), 
+    box-shadow:
+        1px 0px 0 rgb(0 0 0 / 5%),
+        0px 1px 0 rgb(0 0 0 / 5%),
+        2px 1px 0 rgb(0 0 0 / 5%),
         1px 2px 0 rgb(0 0 0 / 5%);
+    margin: ;
 }
