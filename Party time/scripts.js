@@ -8,8 +8,8 @@ const birthDayList = document.querySelector(".birtday_info");
 const timeList = document.querySelector(".time_info");
 let birthDayInfo;
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 function getBdayInfo(submitAction) {
 
@@ -103,13 +103,15 @@ function showInfo(submitEvent){
 
             <li>Your 20,000th day ${(new Date().getTime() - birthDayInfo.day20000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.day20000.getDay()]} ${months[birthDayInfo.day20000.getMonth()]} ${birthDayInfo.day20000.getDate()} ${birthDayInfo.day20000.getFullYear()}</li>
 
-            <li>Your 500,000th day ${(new Date().getTime() - birthDayInfo.hour500000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.hour500000.getDay()]} ${months[birthDayInfo.hour500000.getMonth()]} ${birthDayInfo.hour500000.getDate()} ${birthDayInfo.hour500000.getFullYear()}</li>
+            <li>Your 500,000th hour ${(new Date().getTime() - birthDayInfo.hour500000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.hour500000.getDay()]} ${months[birthDayInfo.hour500000.getMonth()]} ${birthDayInfo.hour500000.getDate()} ${birthDayInfo.hour500000.getFullYear()}</li>
 
             <li>Your one millionth minute ${(new Date().getTime() - birthDayInfo.minute1000000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.minute1000000.getDay()]} ${months[birthDayInfo.minute1000000.getMonth()]} ${birthDayInfo.minute1000000.getDate()} ${birthDayInfo.minute1000000.getFullYear()}</li>
 
             <li>Your ten millionth minute ${(new Date().getTime() - birthDayInfo.minute10000000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.minute10000000.getDay()]} ${months[birthDayInfo.minute10000000.getMonth()]} ${birthDayInfo.minute10000000.getDate()} ${birthDayInfo.minute10000000.getFullYear()}</li>
 
             <li>Your fifty millionth minute ${(new Date().getTime() - birthDayInfo.minute50000000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.minute50000000.getDay()]} ${months[birthDayInfo.minute50000000.getMonth()]} ${birthDayInfo.minute50000000.getDate()} ${birthDayInfo.minute50000000.getFullYear()}</li>
+
+            <li>Your one billionth second ${(new Date().getTime() - birthDayInfo.second1000000000.getTime()) < 0 ? "is" : "was" } ${days[birthDayInfo.second1000000000.getDay()]} ${months[birthDayInfo.second1000000000.getMonth()]} ${birthDayInfo.second1000000000.getDate()} ${birthDayInfo.second1000000000.getFullYear()}</li>
                 `;
     
 }
