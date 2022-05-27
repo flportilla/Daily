@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Selectors
 const instructionsContainer = document.querySelector('[data-instructions_container]');
 const gameContainer = document.querySelector('[data-game_container]');
@@ -139,7 +140,7 @@ function checkGuess(submitAction) {
                 scoreRecord.textContent = `Score: ${score}`
                 inputBox.value = ''
                 titleInformation.textContent = 'Here is the next word'
-
+                randomWordGenerator()
                 //enable the button again to continue the game
                 submitButton.removeAttribute('disabled')
             }, 3000)
