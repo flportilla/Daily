@@ -30,6 +30,7 @@ function getBdayInfo(submitAction) {
 
     //Fixed values
     const milisecsToDays = (1000 * 60 * 60 * 24);//Convert miliseconds to days = 1000 milliseconds * 60 seconds in a minute * 60 minutes in an hour * 24 hours in a day
+    // @ts-ignore
     const todayYear = new Date().getFullYear(); //Current year
     const todayDays = Math.floor((new Date().getTime()) / milisecsToDays); //get the number of days since 1/1/1970 
     const todayMinutes = (new Date().getTime()) / (1000 * 60) //get the number of minutes since 1/1/1970
@@ -40,11 +41,15 @@ function getBdayInfo(submitAction) {
     const tenMillionMinute = (10000000 * 60 * 1000) //10,000,000 minutes in miliseconds
     const fiftyMillionMinute = (50000000 * 60 * 1000) //50,000,000 minutes in miliseconds
     const oneBillionSecond = (1000000000000) //1,000,000,000 seconds in miliseconds
+    // @ts-ignore
     const dayOfBirth = new Date(birthDay.value)
 
     //get the values from the form
+    // @ts-ignore
     const bYear = birthDay.value.slice(0, 4); //get the year from the input
+    // @ts-ignore
     const bMonth = birthDay.value.slice(5, 7); //get the month from the input
+    // @ts-ignore
     const bDay = birthDay.value.slice(8, 10); //get the day from the input
 
     //calculate the age in years
@@ -101,7 +106,9 @@ function getBdayInfo(submitAction) {
 
 function showInfo(submitEvent){
     getBdayInfo(submitEvent);
+    // @ts-ignore
     const bMonth = birthDay.value.slice(5, 7); //get the month from the input
+    // @ts-ignore
     const bDay = birthDay.value.slice(8, 10); //get the day from the input
 
     if(bMonth == `0${new Date().getMonth()+1}` && bDay == new Date().getDate()){
