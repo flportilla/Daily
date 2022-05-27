@@ -32,7 +32,6 @@ window.addEventListener('load', async () => {
             .then(blob => blob.json());
 
     return wordsList = wordList.filter(word => word.length >= 4);
-
 })
 
 // Function to generate random words and display them
@@ -118,11 +117,9 @@ function checkGuess(submitAction) {
 
         //if the chances reach 0, restart the game
         if (chances <= 0) {
-
             
             // Disable the button to prevent multiple clicks
             submitButton.setAttribute('disabled', 'disabled')
-
 
             // Add the game over text
             titleInformation.innerHTML = `
@@ -145,13 +142,9 @@ function checkGuess(submitAction) {
                 submitButton.removeAttribute('disabled')
             }, 3000)
         }
-
     }
 }
 
 //Add event listeners
 playButton.addEventListener('click', startGame);
 submitButton.addEventListener('click', checkGuess);
-
-
-
