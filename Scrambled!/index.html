@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>scrambled!</title>
     <link rel="stylesheet" href="./style.css">
+    <script>
+        const WordList = []
+        fetch('https://raw.githubusercontent.com/bevacqua/correcthorse/master/wordlist.json')
+            .then(response => response.json())
+            .then(data => WordList.push(data));
+    </script>
 </head>
 
 <body>
     <div id="main_container">
         <div id="header">SCRAMBLED!</div>
-        <div id="intructions_container">
+        <div id="instructions_container" data-instructions_container>
             <span>
                 You have three chances to unscramble the word.
             </span>
@@ -23,14 +29,14 @@
                 If you fail, you lose a point.
             </span>
             <div>
-                <button type="button">Let's Play!</button>
+                <button type="button" data-play_button>Let's Play!</button>
             </div>
         </div>
-        <div id="game_container">
+        <div id="game_container" data-game_container>
             <span>
                 Here's your first word. Good Luck!
             </span>
-            <div id="game"> 
+            <div id="game">
                 <span id="score">Score: 0</span>
                 <span id="word">RLNSREUUD</span>
                 <form id="form">

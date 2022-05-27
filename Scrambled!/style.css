@@ -27,7 +27,7 @@
     border-bottom: 5px solid #009786;
 }
 
-#intructions_container{
+#instructions_container{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -36,10 +36,10 @@
     font-size: 24px;
     align-items: center;
     line-height: 2;
-    display: none;
+
 }
 
-#intructions_container div button{
+#instructions_container div button{
     width: 220px;
     height: 68px;
     margin: 80px auto;
@@ -62,6 +62,7 @@
     align-items: center;
     line-height: 2;
     gap: 102px;
+    display: none;
 }
 
 #game{
@@ -122,4 +123,12 @@
         border-radius: 0 5px 5px 0;
         cursor: pointer;
         letter-spacing: normal;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
 }
