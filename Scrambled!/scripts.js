@@ -59,7 +59,7 @@ function randomWordGenerator() {
 
 // Function to Show/hide instructions
 function startGame() {
-    
+
     // Hide the instructions container
     instructionsContainer.style.display = 'none';
     randomWordGenerator()
@@ -80,6 +80,9 @@ function checkGuess(submitAction) {
     // Check if the user input is the same as the answer
     if (guess === words.answer.join('')) {
 
+        // Disable the button to prevent multiple clicks
+        submitButton.setAttribute('disabled', 'disabled')
+
         //Add the text 'Good job' before the next word is generated
         titleInformation.textContent = 'Good job!'
 
@@ -96,13 +99,12 @@ function checkGuess(submitAction) {
             inputBox.value = ''
             titleInformation.textContent = 'Here is the next word'
 
+            //enable the button again to continue the game
+            submitButton.removeAttribute('disabled')
         }, 2000)
 
     }
     else {
-
-        // If it is incorrect, substract 1 to the score
-        score--
 
         // If it is incorrect, substract 1 to the chances
         chances--
@@ -116,6 +118,11 @@ function checkGuess(submitAction) {
         //if the chances reach 0, restart the game
         if (chances <= 0) {
 
+            
+            // Disable the button to prevent multiple clicks
+            submitButton.setAttribute('disabled', 'disabled')
+
+
             // Add the game over text
             titleInformation.innerHTML = `
             <span>
@@ -127,14 +134,14 @@ function checkGuess(submitAction) {
 
             // Resets everything and show the instructions again
             intervalId2 = setTimeout(() => {
-                score = 0;
+                score--
                 chances = 3;
                 scoreRecord.textContent = `Score: ${score}`
-                instructionsContainer.style.display = 'flex';
-                gameContainer.style.display = 'none';
                 inputBox.value = ''
-                titleInformation.textContent = 'Here is the first word'
+                titleInformation.textContent = 'Here is the next word'
 
+                //enable the button again to continue the game
+                submitButton.removeAttribute('disabled')
             }, 3000)
         }
 
