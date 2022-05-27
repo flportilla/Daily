@@ -15,7 +15,7 @@
     height: 100%;
 }
 
-h1{
+.header{
     padding: 20px 0 15px;
     font-family: "Andale Mono", AndaleMono, monospace;
     letter-spacing: 2px;

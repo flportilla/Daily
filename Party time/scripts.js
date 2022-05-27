@@ -6,10 +6,23 @@ const submitButton = document.querySelector('[data-bButton]');
 const form = document.querySelector('[data-form]');
 const birthDayList = document.querySelector(".birtday_info");
 const timeList = document.querySelector(".time_info");
+const titleInfo = document.querySelector('[data-title]');
 let birthDayInfo;
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+function calculateAgeInYears (date) {
+    const now = new Date();
+    const current_year = now.getFullYear();
+    const year_diff = current_year - date.getFullYear();
+    const birthday_this_year = new Date(current_year, date.getMonth(), date.getDate());
+    const has_had_birthday_this_year = (now > birthday_this_year);
+
+    return has_had_birthday_this_year
+        ? year_diff - 1
+        : year_diff ;
+}
 
 function getBdayInfo(submitAction) {
 
@@ -35,7 +48,7 @@ function getBdayInfo(submitAction) {
     const bDay = birthDay.value.slice(8, 10); //get the day from the input
 
     //calculate the age in years
-    const yearsOld = todayYear - bYear;
+    const yearsOld = calculateAgeInYears (dayOfBirth);
 
     //calculate the age in days
     const month = months[bMonth - 1];
@@ -88,6 +101,16 @@ function getBdayInfo(submitAction) {
 
 function showInfo(submitEvent){
     getBdayInfo(submitEvent);
+    const bMonth = birthDay.value.slice(5, 7); //get the month from the input
+    const bDay = birthDay.value.slice(8, 10); //get the day from the input
+
+    if(bMonth == `0${new Date().getMonth()+1}` && bDay == new Date().getDate()){
+        titleInfo.innerHTML = `<h1 class="header">Today's your birthday?! PARTY TIME!</h1>`;
+    }
+    else {
+        titleInfo.innerHTML = `<h1 class="header">Boo! No Parties Today.</h1>`;
+    }
+ 
     
     //create the list with the info of the birthday
     birthDayList.innerHTML = `
