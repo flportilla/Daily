@@ -16,8 +16,7 @@ html {
 .main_container {
   display: flex;
   width: 100%;
-  height: calc(100vh - 18px);
-  margin-top: 10px;
+  max-height: calc(100vh - 18px);
 
 }
 
@@ -75,13 +74,12 @@ html {
 }
 
 .main_container .toy_box{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  min-width: 150px;
-  width: 150px;
-  gap: 10px;
+  transform: scale(0.8);
+	position: relative;
+	display: inline-block;
+	height: 565px;
+	width: 150px;
+  margin-top: -20px;
 }
 
 .info_container{
@@ -101,89 +99,129 @@ html {
 
 /* Shapes */
 
-.shape{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-}
 .triangle1{
-  border-left: 50px solid transparent;
-  border-bottom: 60px solid #676690;
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 60px solid #676690;
+	border-left: 60px solid transparent;
 }
 
 .triangle2{
-  border-right: 50px solid transparent;
-  border-bottom: 60px solid #7F9D39;
+  position: absolute;
+	top: 0;
+	left: 90px;
+	width: 0;
+	height: 0;
+	border-bottom: 60px solid #7F9D39;
+	border-right: 60px solid transparent;
 }
 
 .triangle3{
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 60px solid #FFCD00;
+  position: absolute;
+	top: 75px;
+	left: 0px;
+	width: 0;
+	height: 0;
+	border-bottom: 50px solid #EDC951;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
 }
 
 .square1{
-  height: 60px;
-  width: 60px;
-  background-color: #2E70FF;
+  position: absolute;
+	height: 60px;
+	width: 60px;
+	top: 155px;
+	left: 10px;
+	background-color: #2E70FF;  
 }
 
 .rectangleV1{
-  background-color: #CC333F;
-  height: 120px;
-  width: 30px;
+  position: absolute;
+	height: 120px;
+	width: 30px;
+	top: 85px;
+	left: 105px;
+	background-color: #CC333F;
 }
 
 .rectangleH1{
-  height: 30px;
-  width: 120px;
-  background-color: #EB6841;
+  position: absolute;
+	height: 30px;
+	width: 120px;
+	top: 240px;
+	left: 15px;
+	background-color: #EB6841;
 }
 
 .rectangleV2{
-  height: 70px;
-  width: 40px;
-  background-color: #6A4A3C;;
+  position: absolute;
+	height: 70px;
+	width: 40px;
+	top: 295px;
+	left: 15px;
+	background-color: #6A4A3C;
 }
 
 .circle{
-  height: 50px;
-  width: 50px;
-  background-color: #00A0B0;
-  border-radius: 50%;
+  position: absolute;
+	top: 305px;
+	left: 85px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: #00A0B0;
 }
 
 .semiCirle{
-  height: 40px;
-  width: 80px;
-  background-color: #3B45A6;
-  border-radius: 80px 80px 0 0;
+  position: absolute;
+	top: 385px;
+	left: 35px;
+	height: 40px;
+	width: 80px;
+	border-radius: 80px 80px 0 0;
+	background-color: #3B45A6;
 }
 
 .halfSemiCircle1{
-  height: 40px;
-  width: 40px;
-  border-radius: 80px 0 0 0;
-  background-color: #FB5A69;
+  position: absolute;
+	top: 455px;
+	left: 5px;
+	height: 40px;
+	width: 40px;
+	border-radius: 80px 0 0 0;
+	background-color: #FB5A69;
 }
 
 .trapezoid1{
-  background-color: #D48317;
-  width: 60px;
-  height: 40px;
+  position: absolute;
+	top: 455px;
+	left: 80px;
+	width: 60px;
+	height: 40px;
+	background-color: #D48317;
   transform: skew(25deg);
 }
+
 .halfSemCirle2{
-  height: 40px;
-  width: 40px;
-  border-radius: 0 80px 0 0;
-  background-color: #5CD465;
+  position: absolute;
+	top: 525px;
+	left: 5px;
+	height: 40px;
+	width: 40px;
+	border-radius: 0 80px 0 0;
+	background-color: #5CD465;
 }
 
 .trapezoid2{
-  width: 60px;
-  height: 40px;
+  position: absolute;
+	top: 525px;
+	left: 80px;
+	width: 60px;
+	height: 40px;
   transform: skew(-25deg);
   background-color: #452159;
 }
