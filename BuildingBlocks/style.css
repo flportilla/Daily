@@ -99,6 +99,11 @@ html {
 
 /* Shapes */
 
+.shape:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 .triangle1{
   position: absolute;
 	top: 0;
