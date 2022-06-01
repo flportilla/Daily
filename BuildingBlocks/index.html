@@ -5,46 +5,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building Blocks</title>
+    <title>Building shapes</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <header class="header" id="header">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-        </ul>
-    </header>
-    <div class="main_container" id="main-container">
-        <nav class="toy_box" id="toy-box">
-            <div class="shape triangle1"></div>
-            <div class="shape triangle2"></div>
-            <div class="shape triangle3"></div>
-            <div class="shape square1"></div>
-            <div class="shape rectangleV1"></div>
-            <div class="shape rectangleH1"></div>
-            <div class="shape rectangleV2"></div>
-            <div class="shape circle"></div>
-            <div class="shape semiCirle"></div>
-            <div class="shape halfSemiCircle1"></div>
-            <div class="shape trapezoid1"></div>
-            <div class="shape halfSemCirle2"></div>
-            <div class="shape trapezoid2"></div>
-        </nav>
-        <div class="info_container" id="info-container">
-            <h1 class="title" id="title">
-                Building Blocks
-            </h1>
-            <p class="description" id="description">
-                Drag a shape over here to start building.
-            </p>
+<body id="building_shapes">
+    <header>
+        <div id="links_container">
+            <a href="#" id="home">Home</a>
+            <a href="#" id="blog">Blog</a>
         </div>
-        <div class="canvas hidden" id="canvas">
-            
+    </header>
+
+    <div id="container">
+        <div id="toybox">
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="square" class="shape square"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectup" class="shape rectup long"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="rectdown" class="shape rectdown"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="triup" class="shape triup"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="trileft" class="shape trileft"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="triright" class="shape triright"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="paraleft" class="shape paraleft"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="pararight" class="shape pararight"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="circle" class="shape circle"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="semitop" class="shape semitop"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartleft" class="shape quartleft"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+            <div data-shape id="quartright" class="shape quartright"></div>
+        </div>
+        <div id="canvas">
+            <div id="instructions">
+                <h1>Building shapes</h1>
+                <div>Drag a shape over here to start building.<div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="./scripts.js"></script>
+
+    </div>
+<script src="scripts.js"></script>
 </body>
 
 </html>

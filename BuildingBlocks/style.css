@@ -1,243 +1,171 @@
-html {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0 0 auto 0;
-  max-width: 100vw;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  padding: inherit;
-  margin: inherit;
-}
-
-.main_container {
-  display: flex;
-  position: relative;
-  width: 100%;
-  max-height: calc(100vh - 18px);
-
-}
-
-.title {
+body {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   letter-spacing: 2px;
+}
+
+header {
+  margin-bottom: 40px;
+  height: 46px;
+  background-color: #e9e8f1;
+}
+
+#links_container {
+  text-align: right;
+  padding: 15px;
+}
+
+header a {
+  text-decoration: none;
+  color: #3B45A6;
+  margin: 0 10px;
+}
+
+#toybox {
+  position: relative;
+  display: inline-block;
+  height: 565px;
+  width: 150px;
+  margin: 0 40px;
+}
+
+#canvas {
+  position: relative;
+  display: inline-block;
+  height: 565px;
+  width: 700px;
   text-align: center;
+  vertical-align: top;
+}
+
+#instructions {
+  margin-top: 150px;
+  margin-left: 100px;
+  font-size: 24px;
   color: #BCB9D4;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  vertical-align: baseline;
+}
+
+h1 {
   font-size: 32px;
   line-height: 3;
 }
 
-.description {
-  line-height: 1;
-  letter-spacing: 2px;
-  text-align: center;
-  color: #BCB9D4;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
+/* drawing shapes */
 
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 32px;
-  background-color: #e9e8f1;
-}
-.header ul{
-  display: flex;
-  justify-content: flex-end;
-
-  list-style: none;
-}
-.header ul a{
-  text-decoration: none;
-  color: #3B45A6;
-  margin: 0 10px;
-  font-size: 12px;
-}
-
-.main_container .toy_box{
-  transform: scale(0.8);
-	position: relative;
-	display: inline-block;
-	height: 565px;
-	width: 150px;
-  margin-top: -20px;
-}
-
-.info_container{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: start;
-  width: 100%;
-  height: 100%;
-  flex:1;
-}
-.canvas{
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  flex:1;
-  transition: all 1s ease-in-out;
-}
-.hidden{
-  transition: all 1s ease-in-out;
-  opacity: 0;
-}
-.hide{
-  display: none;
-}
-
-/* Shapes */
-
-.shape:hover {
+.shape {
+  position: absolute;
   cursor: pointer;
-  transform: scale(1.1);
 }
 
-.triangle1{
-  position: absolute;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 0;
-	border-bottom: 60px solid #676690;
-	border-left: 60px solid transparent;
+.square {
+  height: 60px;
+  width: 60px;
+  top: 155px;
+  left: 10px;
+  background-color: #2E70FF;
 }
 
-.triangle2{
-  position: absolute;
-	top: 0;
-	left: 90px;
-	width: 0;
-	height: 0;
-	border-bottom: 60px solid #7F9D39;
-	border-right: 60px solid transparent;
+.rectup {
+  height: 70px;
+  width: 40px;
+  top: 295px;
+  left: 15px;
+  background-color: #6A4A3C;
 }
 
-.triangle3{
-  position: absolute;
-	top: 75px;
-	left: 0px;
-	width: 0;
-	height: 0;
-	border-bottom: 50px solid #EDC951;
-	border-left: 40px solid transparent;
-	border-right: 40px solid transparent;
+.rectup.long {
+  height: 120px;
+  width: 30px;
+  top: 85px;
+  left: 105px;
+  background-color: #CC333F;
 }
 
-.square1{
-  position: absolute;
-	height: 60px;
-	width: 60px;
-	top: 155px;
-	left: 10px;
-	background-color: #2E70FF;  
+.rectdown {
+  height: 30px;
+  width: 120px;
+  top: 240px;
+  left: 15px;
+  background-color: #EB6841;
 }
 
-.rectangleV1{
-  position: absolute;
-	height: 120px;
-	width: 30px;
-	top: 85px;
-	left: 105px;
-	background-color: #CC333F;
+.triup {
+  top: 75px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid #EDC951;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
 }
 
-.rectangleH1{
-  position: absolute;
-	height: 30px;
-	width: 120px;
-	top: 240px;
-	left: 15px;
-	background-color: #EB6841;
+.trileft {
+  top: 0;
+  left: 90px;
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid #7F9D39;
+  border-right: 60px solid transparent;
 }
 
-.rectangleV2{
-  position: absolute;
-	height: 70px;
-	width: 40px;
-	top: 295px;
-	left: 15px;
-	background-color: #6A4A3C;
+.triright {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid #676690;
+  border-left: 60px solid transparent;
 }
 
-.circle{
-  position: absolute;
-	top: 305px;
-	left: 85px;
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-	background-color: #00A0B0;
-}
-
-.semiCirle{
-  position: absolute;
-	top: 385px;
-	left: 35px;
-	height: 40px;
-	width: 80px;
-	border-radius: 80px 80px 0 0;
-	background-color: #3B45A6;
-}
-
-.halfSemiCircle1{
-  position: absolute;
-	top: 455px;
-	left: 5px;
-	height: 40px;
-	width: 40px;
-	border-radius: 80px 0 0 0;
-	background-color: #FB5A69;
-}
-
-.trapezoid1{
-  position: absolute;
-	top: 455px;
-	left: 80px;
-	width: 60px;
-	height: 40px;
-	background-color: #D48317;
+.paraleft {
+  top: 455px;
+  left: 80px;
+  width: 60px;
+  height: 40px;
   transform: skew(25deg);
+  background-color: #D48317;
 }
 
-.halfSemCirle2{
-  position: absolute;
-	top: 525px;
-	left: 5px;
-	height: 40px;
-	width: 40px;
-	border-radius: 0 80px 0 0;
-	background-color: #5CD465;
-}
-
-.trapezoid2{
-  position: absolute;
-	top: 525px;
-	left: 80px;
-	width: 60px;
-	height: 40px;
+.pararight {
+  top: 525px;
+  left: 80px;
+  width: 60px;
+  height: 40px;
   transform: skew(-25deg);
   background-color: #452159;
+}
+
+.circle {
+  top: 305px;
+  left: 85px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #00A0B0;
+}
+
+.semitop {
+  top: 385px;
+  left: 35px;
+  height: 40px;
+  width: 80px;
+  border-radius: 80px 80px 0 0;
+  background-color: #3B45A6;
+}
+
+.quartleft {
+  top: 455px;
+  left: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 80px 0 0 0;
+  background-color: #FB5A69;
+}
+
+.quartright {
+  top: 525px;
+  left: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 0 80px 0 0;
+  background-color: #5CD465;
 }
