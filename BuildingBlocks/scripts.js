@@ -4,38 +4,36 @@ const shapes = document.querySelectorAll('.shape');
 const toyBox = document.querySelector('#toy-box');
 const canvas = document.querySelector('#canvas');
 const infoContainer = document.querySelector('#info-container');
-let currentShape;
-let interval1;
-let isDragging = false;
+
 
 //Variables
 
-const mouseCoords = {
-    initialX: 0,
-    initialY: 0,
+//Coodinates
+const mouseInitialCoords = {}
+const mouseNewCoords = {};
 
-    newX: 0,
-    newY: 0
-} 
+//Holds the current shape that is being clicked
+let shapeSelected = null;
 
+//Stores the interval ID to clear it later
+let interval1;
 
+//Flag to check if the shape is being dragged
+let isDragging = false;
 
 //Functions
 
-//Get the shape that is clicked, clone it, and add it to the #canvas div
-function handleInitialValues(mouseDownAction) {
+//Get the shape that was clicked.
+function getShapeClicked(mouseDownAction) {
+    const shapes = document.querySelectorAll('.shape');
+    
+    if(!shapes) return;
 
-    //Get the shape that is clicked
-    currentShape = mouseDownAction.target;
-
-    //Clone the shape
-    const shapeSelected = currentShape.cloneNode(true);
-
-    //Add the cloned shape to the #canvas div
-    canvas.appendChild(shapeSelected);
-
-    isDragging = true;
-
+    shapes.forEach(shape => {
+        if(shape.contains(mouseDownAction.target)) {
+            shapeSelected = shape;
+        }
+    });
 }
 
 //Hide info container and show the canvas
@@ -49,14 +47,53 @@ function showCanvas() {
     interval1 = setInterval(() => {
         infoContainer.classList.add('hide');
     }, 1000);
+}
+
+
+function startDrag(mouseDownAction) {
+    isDragging = true;
+
+    mouseDownAction.preventDefault();
+    getShapeClicked(mouseDownAction)
+    showCanvas();
+
+    canvas.appendChild(shapeSelected);
+
+    mouseInitialCoords.x = mouseDownAction.clientX - shapeSelected.offsetLeft;
+    mouseInitialCoords.y = mouseDownAction.clientY - shapeSelected.offsetTop;
+
+    console.log(mouseInitialCoords);
 
 }
 
+function dragAction(mouseMoveAction) {
+    if (!isDragging) return 
+
+        mouseNewCoords.newX = mouseMoveAction.clientX - shapeSelected.offsetLeft;
+        mouseNewCoords.newY = mouseMoveAction.clientY - shapeSelected.offsetTop;
+
+        const walkX = mouseNewCoords.newX - mouseInitialCoords.x;
+        const walkY = mouseNewCoords.newY - mouseInitialCoords.y;
+        
+        shapeSelected.style.left = `${shapeSelected.offsetLeft + walkX}px`;
+        shapeSelected.style.top = `${shapeSelected.offsetTop + walkY}px`;
+   }
+
+function endDrag() {
+
+    isDragging = false;
+
+}
+
+
 //Event Listeners
+
+toyBox.addEventListener('mousedown', startDrag);
+toyBox.addEventListener('mouseup', startDrag);
 shapes.forEach(shape => {
-    shape.addEventListener('click', handleInitialValues)
-});
-shapes.forEach(shape => {
-    shape.addEventListener('mousedown', showCanvas)
+    shape.addEventListener('mousemove', dragAction)
 });
 
+
+canvas.addEventListener('mousedown', startDrag)
+canvas.addEventListener('mouseup', endDrag);
