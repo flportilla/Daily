@@ -5,13 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Me!</title>
+    <title>Teleprompter</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="main_container">
-
+    <div id="main_container" class="main_container">
+        <header id="header" class="header">
+            <h1>Teleprompter</h1>
+            <ul>
+                <li>Home</li>
+                <li>Blog</li>
+            </ul>
+        </header>
+        <h1 id="instructions" class="instructions">Enter your speech or other text below
+            to have it returned in a teleprompter.</h1>
+        <div id="input_container" class="input_container">
+            <form id="form" class="form">
+                <input id="input" class="input" type="text">
+                <button id="button" class="submit_button">Teleprompt me!</button>
+            </form>
+        </div>
     </div>
     <script src="./scripts.js"></script>
 </body>
