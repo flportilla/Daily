@@ -71,3 +71,14 @@ button{
 .game_container{
   display: none;
 }
+
+.start_again_container{
+  display: none;
+}
+.try_again{
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 76px;
+  font-size: 18px;
+}
