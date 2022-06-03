@@ -15,7 +15,7 @@ let gameStart = false;
 function startGame(){
     gameStart = true;
     instructionsContainer.style.display = 'none';
-    gameContainer.style.display = 'block';
+    gameContainer.style.display = 'grid';
     handleGameDuration();
 }
 
@@ -41,3 +41,21 @@ function handleGameDuration(){
 //Events
 startGameButton.addEventListener('click', startGame);
 document.addEventListener('click', clickCounter);
+
+
+//Unholy JS to make the progress circle work
+let progressBar = document.querySelector(".circular-progress");
+let progressValue = 0;
+let progressEndValue = 60;
+let speed = 50;
+
+let progress = setInterval(() => {
+  progressValue++;
+  progressBar.style.background = `conic-gradient(
+       #5fbfff ${progressValue * 12}deg,
+       #BDC3C7 ${progressValue * 12}deg
+  )`;
+  if (progressValue == progressEndValue) {
+    clearInterval(progress);
+  }
+}, 1000);

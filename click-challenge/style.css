@@ -48,6 +48,7 @@ button{
   cursor: pointer;
 }
 .clicks_counter{
+  position: relative;
   line-height: 1;
   text-align: center;
   color: #132537;
@@ -63,13 +64,22 @@ button{
   box-sizing: border-box;
   position: relative;
   margin: auto;
-  padding-top: 150px;
   font-size: 200px;
   z-index: 400;
 }
 
 .game_container{
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
   display: none;
+  justify-content: center;
+  align-items: center;  
+
 }
 
 .start_again_container{
@@ -82,3 +92,26 @@ button{
   margin-top: 76px;
   font-size: 18px;
 }
+
+.circular-progress {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  border-radius: 50%;
+}
+.value-container {
+
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  color: #231c3d;
+}
+
