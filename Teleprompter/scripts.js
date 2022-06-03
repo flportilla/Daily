@@ -1,3 +1,4 @@
+// @ts-nocheck
 //Selectors
 const submitButton = document.getElementById('button');
 const mainContainer = document.getElementById('main_container');
