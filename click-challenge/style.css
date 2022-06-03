@@ -22,29 +22,48 @@ body{
 
 h1{
   font-size: 60px;
-  margin: 14px 17px 0 0;
+  margin-top: 14px;
   font-weight: 400;
 }
 
 h2{
   font-size: 30px;
-  margin: 16px 17px 0 0;
+  margin-top: 16px;
   font-weight: 400;
 }
 h3{
   font-size: 20px;
   font-weight: 400;
-  margin: 86px 17px 0 0;
+  margin-top: 86px;
 }
 button{
   border: none;
   height: 60px;
   width: 180px;
   margin-top: 45px;
-  margin-right: 17px;
   font-size: 40px;
   background-color: #E74C3C;
   color: #ECF0F1;
   text-decoration: none;
   cursor: pointer;
+}
+.clicks_counter{
+  line-height: 1;
+  text-align: center;
+  color: #132537;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  padding-top: 150px;
+  font-size: 200px;
+  z-index: 400;
 }
