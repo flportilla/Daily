@@ -67,3 +67,7 @@ button{
   font-size: 200px;
   z-index: 400;
 }
+
+.game_container{
+  display: none;
+}
