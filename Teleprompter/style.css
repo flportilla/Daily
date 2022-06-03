@@ -35,6 +35,7 @@ html {
   color: #f4f4f6;
   display: flex;
   justify-content: space-between;
+
 }
 
 .header h1 {
@@ -106,6 +107,7 @@ html {
     -1px -1px 0 rgb(0 0 0 / 40%), 
     1px 1px 0 rgb(255 255 255 / 20%);
   color: #0f0f12;
+  z-index: 10000; 
 }
 
 .dark_background{
@@ -124,5 +126,5 @@ html {
   text-align: left;
   color: #fafaff;
   text-shadow: 0 0 5px #5d5dff, 0 0 3px #5d5dff, 0 0 2px #1c1c52, 0 0 1px #000, 0 0 1px #000;
-  z-index: 0;
+  z-index: -1;
 }
