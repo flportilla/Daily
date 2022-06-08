@@ -97,6 +97,7 @@ html {
   display: grid;
   grid-template-columns: repeat(6, 100px);
   gap: 8px;
+  cursor: pointer;
 }
 
 .cards_container .card {
