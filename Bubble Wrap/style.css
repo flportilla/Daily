@@ -11,12 +11,12 @@ header {
   padding: 10px 0;
 }
 
-#links_container {
+#links {
   float: right;
   text-align: right;
 }
 
-#links_container a {
+#links a {
   margin-left: 5px;
   padding: 5px 10px;
   font-size: 12px;
@@ -26,11 +26,11 @@ header {
   background-color: hsl(300, 70%, 70%);
 }
 
-#links_container a:visited {
+#links a:visited {
   color: #000;
 }
 
-#links_container a:hover {
+#links a:hover {
   color: lime;
 }
 
@@ -93,8 +93,4 @@ header {
 
 .popped {
   position: absolute;
-}
-
-.clear {
-  clear: both;
 }
