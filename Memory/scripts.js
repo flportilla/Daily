@@ -44,6 +44,7 @@ function handleMatch(flippedCards) {
     if (flippedCards.length === 2) {
 
         //Disable clicks
+        // @ts-ignore
         cardsContainer.style.pointerEvents = "none"
 
         //Add attempts and update the attempts counter
@@ -61,6 +62,7 @@ function handleMatch(flippedCards) {
             flippedCards.length = 0
 
             //Enable clicks again
+            // @ts-ignore
             cardsContainer.style.pointerEvents = "auto"
 
         }
@@ -75,6 +77,7 @@ function handleMatch(flippedCards) {
                     card.previousElementSibling.style.display = "block"
                 })
                 flippedCards.length = 0
+                // @ts-ignore
                 cardsContainer.style.pointerEvents = "auto"
             }, 400)
         }
@@ -87,6 +90,7 @@ function generateRandomGrid(imagesList) {
     const copyOfImagesList = imagesList.slice()
     cards.forEach(card => {
         const randomIndex = Math.floor(Math.random() * copyOfImagesList.length)
+        // @ts-ignore
         card.src = `./img/${copyOfImagesList[randomIndex]}.jpg`
         copyOfImagesList.splice(randomIndex, 1)
     })
