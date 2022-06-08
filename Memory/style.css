@@ -98,3 +98,11 @@ html {
   grid-template-columns: repeat(6, 100px);
   gap: 8px;
 }
+
+.cards_container .card {
+  display: none;
+}
+
+.cards_container .card_back {
+  display: block;
+}
