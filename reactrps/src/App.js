@@ -21,6 +21,7 @@ function GameContainers() {
     timer: 'timer_container',
     player: 'player_container'
   };
+
   return (
     <>
       <div className={containerClasses.computer} id={containerClasses.computer}>
@@ -35,21 +36,31 @@ function GameContainers() {
     </>
   )
 }
+
 function ButtonsContainer() {
   const buttonsName = {
     rock: 'rock',
     paper: 'paper',
     scissors: 'scissors'
   }
+
   return (
     <>
-      <button type="button" onClick={handleShake} className={buttonsName.rock} id={buttonsName.rock}>{buttonsName.rock}</button>
-      <button type="button" onClick={handleShake} className={buttonsName.paper} id={buttonsName.paper}>{buttonsName.paper}</button>
-      <button type="button" onClick={handleShake} className={buttonsName.scissors} id={buttonsName.scissors}>{buttonsName.scissors}</button>
+      <button type="button" onClick={handleShake} className={buttonsName.rock} id={buttonsName.rock}>
+        {buttonsName.rock}
+      </button>
+      <button type="button" onClick={handleShake} className={buttonsName.paper} id={buttonsName.paper}>
+        {buttonsName.paper}
+      </button>
+      <button type="button" onClick={handleShake} className={buttonsName.scissors} id={buttonsName.scissors}>
+        {buttonsName.scissors}
+      </button>
     </>
   )
 }
+
 function Computer() {
+
   return (
     <>
       <div className="computer_name" id="computer_name">Computer</div>
@@ -60,14 +71,18 @@ function Computer() {
     </>
   )
 }
+
 function Timer() {
+
   return (
     <>
       <div className="timer" id="timer">Choose your weapon</div>
     </>
   )
 }
+
 function Player() {
+
   return (
     <>
       <div className="player_name" id="player_name">You</div>
@@ -78,6 +93,7 @@ function Player() {
     </>
   )
 }
+
 function App() {
 
   return (
@@ -98,26 +114,32 @@ function handleChoices() {
   const computerSelection = Math.floor(Math.random() * 3) + 1;
 
   switch (computerSelection) {
+
     case 1:
       selections.computer = 'rock';
       break;
+
     case 2:
       selections.computer = 'paper';
       break;
+
     case 3:
       selections.computer = 'scissors';
       break;
   }
 
   switch (selections.player) {
+
     case 'rock':
       selections.player = 'rock';
       playerHand.src = `${rock}`;
       break;
+
     case 'paper':
       selections.player = 'paper';
       playerHand.src = `${paper}`;
       break;
+
     case 'scissors':
       selections.player = 'scissors';
       playerHand.src = `${scissors}`;
@@ -203,11 +225,7 @@ function handleResults() {
         results.innerText = `You lose!`;
       }
       break;
-
-
-
   }
-
 }
 
 export default App;
