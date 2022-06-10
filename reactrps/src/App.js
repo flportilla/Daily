@@ -4,7 +4,6 @@ import right_fist from './right_fist.png';
 import rock from './rock.png';
 import paper from './paper.png';
 import scissors from './scissors.png';
-
 import './App.css';
 
 function GameContainers() {
@@ -45,7 +44,7 @@ function ButtonsContainer() {
 function Computer() {
   return (
     <>
-      <div>Computer</div>
+      <div className="computer_name" id="computer_name">Computer</div>
       <div style={{ height: 100 }}></div>
       <div id='computer_hand'>
         <img src={left_fist} id="computer_hand_img" alt="left_fist" />
@@ -56,14 +55,14 @@ function Computer() {
 function Timer() {
   return (
     <>
-      <div>Choose your weapon</div>
+      <div className="timer" id="timer">Choose your weapon</div>
     </>
   )
 }
 function Player() {
   return (
     <>
-      <div>Player</div>
+      <div className="player_name" id="player_name">You</div>
       <div style={{ height: 100 }}></div>
       <div id='player_hand'>
         <img src={right_fist} id="player_hand_img" alt="right_fist" />
