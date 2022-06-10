@@ -14,8 +14,6 @@ import './App.css';
 let setCountdown;
 const selections = {}
 
-
-
 function GameContainers() {
 
   const containerClasses = {
@@ -156,7 +154,9 @@ function handleShake(clickEvent) {
 };
 
 function handleResults() {
+
   clearInterval(setCountdown)
+
   const results = document.getElementById('timer');
   const computerHand = document.getElementById('computer_hand_img');
   const playerHand = document.getElementById('player_hand_img');
@@ -164,20 +164,17 @@ function handleResults() {
   computerHand.classList.remove('shake');
   playerHand.classList.remove('shake');
 
-  console.log(selections);
-
   switch (selections.computer) {
-
-    case 'scissors':
-      computerHand.src = `${scissors} `
+    case 'rock':
+      computerHand.src = `${rock}`
 
       if (selections.computer === selections.player) {
         results.innerText = `It's a draw!`;
       }
-      else if (selections.player === 'rock' && selections.computer === 'scissors') {
+      else if (selections.player === 'paper' && selections.computer === 'rock') {
         results.innerText = `You win!`;
       }
-      else if (selections.player === 'paper' && selections.computer === 'scissors') {
+      else if (selections.player === 'scissors' && selections.computer === 'rock') {
         results.innerText = `You lose!`;
       }
       break;
@@ -196,19 +193,22 @@ function handleResults() {
       }
       break;
 
-    case 'rock':
-      computerHand.src = `${rock}`
+    case 'scissors':
+      computerHand.src = `${scissors} `
 
       if (selections.computer === selections.player) {
         results.innerText = `It's a draw!`;
       }
-      else if (selections.player === 'paper' && selections.computer === 'rock') {
+      else if (selections.player === 'rock' && selections.computer === 'scissors') {
         results.innerText = `You win!`;
       }
-      else if (selections.player === 'scissors' && selections.computer === 'rock') {
+      else if (selections.player === 'paper' && selections.computer === 'scissors') {
         results.innerText = `You lose!`;
       }
       break;
+
+
+
   }
 
 }
