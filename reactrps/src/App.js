@@ -71,7 +71,6 @@ function Player() {
     </>
   )
 }
-
 function App() {
 
   return (
