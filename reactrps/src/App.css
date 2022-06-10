@@ -13,6 +13,12 @@ html {
   margin: inherit;
 }
 
+#player_hand,
+#computer_hand {
+  display: flex;
+  justify-content: center;
+}
+
 .main_container {
   display: flex;
   flex-direction: column;

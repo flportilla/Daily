@@ -167,7 +167,6 @@ function handleResults() {
   switch (selections.computer) {
     case 'rock':
       computerHand.src = `${rock}`
-
       if (selections.computer === selections.player) {
         results.innerText = `It's a draw!`;
       }
@@ -181,7 +180,6 @@ function handleResults() {
 
     case 'paper':
       computerHand.src = `${paper}`
-
       if (selections.computer === selections.player) {
         results.innerText = `It's a draw!`;
       }
@@ -195,7 +193,6 @@ function handleResults() {
 
     case 'scissors':
       computerHand.src = `${scissors} `
-
       if (selections.computer === selections.player) {
         results.innerText = `It's a draw!`;
       }
